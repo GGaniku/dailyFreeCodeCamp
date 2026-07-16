@@ -7,26 +7,17 @@ Given a string, convert it to Pig Latin using the following rules:
 '''
 s = input('Write a word: ')
 def pig_latin(s):
-    # list = s.split()
-    ns = ''
+    res = ''
+
     # Considering that s is a single word
     if s[0] in 'aeiou':
-        ns = f"{s}way"
+        res = f"{s}way"
+    elif s[0] not in 'aeiou':
+        res = f"{s[1:]}{s[:1]}ay"
     else:
-        ns = "Error. The word doesn't beggins with an vowel."
+        res = "Error. This word isn't allowed. Try again."
 
-    # result = " ".join(ns)
-    return ns
+    return res
 
 a = pig_latin(s)
 print(a)
-
-
-
-# s = input(str('Write a word: '))
-# # ns = f"{s}way"
-# result = ''
-# if s in 'aeiou':
-#     result = f"{s}way"
-
-# print(result)
